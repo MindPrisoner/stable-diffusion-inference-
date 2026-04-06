@@ -21,7 +21,7 @@ stable_diffusion_inference/
 
 ## 依赖安装
 
-建议先创建虚拟环境，再安装依赖：
+先创建虚拟环境，再安装依赖：
 
 ```bash
 pip install -r requirements.txt
@@ -45,7 +45,7 @@ pip install -r requirements.txt
 
 这表示模型权重需要提前下载到本地，并且目录中应包含 Stable Diffusion 1.5 所需文件。
 
-如果你的模型存放位置不同，只需要修改 `generate.py` 里的 `model_path` 即可。
+模型存放位置不同的情况下，`generate.py` 里的 `model_path` 需要同步修改。
 
 ## 运行方式
 
@@ -96,7 +96,7 @@ python generate.py
 
 ## 实验观察
 
-这个项目主要适合观察下面几类现象：
+这个项目主要用于观察下面几类现象：
 
 - 加入 `negative prompt` 后，画面中的噪点和畸变通常会减少
 - `guidance` 较小时，模型更自由，但可能更发散
@@ -110,4 +110,3 @@ python generate.py
 - 如果有 GPU，脚本会优先使用 CUDA
 - 如果没有 GPU，会回退到 CPU，但推理会明显更慢
 - `variant="fp16"` 适合半精度模型文件，若你的本地模型结构不同，可能需要同步调整加载参数
-
